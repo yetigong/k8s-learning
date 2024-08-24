@@ -14,6 +14,12 @@
                     <model value="anthropic/claude-3-sonnet-20240229" />
                     <provider value="Anthropic" />
                     <title value="Claude 3 Sonnet" />
+                    <usage>
+                      <list>
+                        <option value="chat" />
+                        <option value="edit" />
+                      </list>
+                    </usage>
                   </llm>
                 </llm>
               </chat>
@@ -24,11 +30,29 @@
                     <model value="anthropic/claude-3-sonnet-20240229" />
                     <provider value="Anthropic" />
                     <title value="Claude 3 Sonnet" />
+                    <usage>
+                      <list>
+                        <option value="chat" />
+                        <option value="edit" />
+                      </list>
+                    </usage>
                   </llm>
                 </llm>
               </chat>
               <chat>
                 <internalId value="e91a4bdc-cb7d-4b74-854b-9ffdcaaa3777" />
+              </chat>
+              <chat>
+                <internalId value="c52f3f94-c173-47bb-ac14-1266ee3c9ddc" />
+              </chat>
+              <chat>
+                <internalId value="338190e9-2841-42ff-a1fd-8605c4cd4a40" />
+              </chat>
+              <chat>
+                <internalId value="ddd335c0-9708-457a-adad-def97ab063b6" />
+              </chat>
+              <chat>
+                <internalId value="46576dec-f834-47eb-a855-9da65091f89e" />
               </chat>
             </list>
           </chats>
@@ -37,6 +61,71 @@
               <model value="anthropic/claude-3-sonnet-20240229" />
               <provider value="Anthropic" />
               <title value="Claude 3 Sonnet" />
+            </llm>
+          </defaultLlm>
+        </AccountData>
+        <AccountData>
+          <accountId value="VXNlcjo1NTE4NzE=" />
+          <chats>
+            <list>
+              <chat>
+                <internalId value="22dd7380-6b77-4513-8d11-c1f5430c57fb" />
+                <llm>
+                  <llm>
+                    <model value="anthropic/claude-3-5-sonnet-20240620" />
+                    <provider value="Anthropic" />
+                    <tags>
+                      <list>
+                        <option value="gateway" />
+                        <option value="accuracy" />
+                        <option value="recommended" />
+                        <option value="free" />
+                      </list>
+                    </tags>
+                    <title value="Claude 3.5 Sonnet" />
+                    <usage>
+                      <list>
+                        <option value="chat" />
+                        <option value="edit" />
+                      </list>
+                    </usage>
+                  </llm>
+                </llm>
+                <messages>
+                  <list>
+                    <message>
+                      <speaker value="HUMAN" />
+                      <text value="can you generate and add another kubernetes deployment for the quote-service?" />
+                    </message>
+                    <message>
+                      <speaker value="ASSISTANT" />
+                      <text value="Certainly! I'd be happy to help you generate another Kubernetes deployment for the quote-service. To create a new deployment, we'll need to define a new YAML file or add to an existing one. Here's an example of what the deployment might look like:&#10;&#10;```yaml&#10;apiVersion: apps/v1&#10;kind: Deployment&#10;metadata:&#10;  name: quote-service-deployment&#10;  labels:&#10;    app: quote-service&#10;spec:&#10;  replicas: 3&#10;  selector:&#10;    matchLabels:&#10;      app: quote-service&#10;  template:&#10;    metadata:&#10;      labels:&#10;        app: quote-service&#10;    spec:&#10;      containers:&#10;      - name: quote-service&#10;        image: your-registry/quote-service:latest&#10;        ports:&#10;        - containerPort: 8080&#10;        resources:&#10;          limits:&#10;            cpu: &quot;500m&quot;&#10;            memory: &quot;512Mi&quot;&#10;          requests:&#10;            cpu: &quot;200m&quot;&#10;            memory: &quot;256Mi&quot;&#10;        env:&#10;        - name: DATABASE_URL&#10;          valueFrom:&#10;            secretKeyRef:&#10;              name: quote-service-secrets&#10;              key: database-url&#10;        - name: API_KEY&#10;          valueFrom:&#10;            secretKeyRef:&#10;              name: quote-service-secrets&#10;              key: api-key&#10;```&#10;&#10;This deployment configuration does the following:&#10;&#10;1. Creates a deployment named &quot;quote-service-deployment&quot;&#10;2. Sets up 3 replicas of the pod&#10;3. Uses a container image named &quot;your-registry/quote-service:latest&quot; (you should replace this with your actual image)&#10;4. Exposes port 8080 for the container&#10;5. Sets resource limits and requests for CPU and memory&#10;6. Defines environment variables, in this case pulling from a Secret (you'll need to create this Secret separately)&#10;&#10;To use this deployment:&#10;&#10;1. Save this YAML to a file, e.g., `quote-service-deployment.yaml`&#10;2. Apply it to your Kubernetes cluster using:&#10;   ```&#10;   kubectl apply -f quote-service-deployment.yaml&#10;   ```&#10;&#10;Remember to adjust the values according to your specific needs, such as the image name, resource limits, and environment variables. Also, ensure that the necessary Secrets (quote-service-secrets in this example) are created in your cluster before applying this deployment.&#10;&#10;Is there anything specific you'd like to modify or add to this deployment configuration?" />
+                    </message>
+                  </list>
+                </messages>
+                <updatedAt value="2024-08-24T16:48:30.319447" />
+              </chat>
+            </list>
+          </chats>
+          <defaultLlm>
+            <llm>
+              <model value="anthropic/claude-3-5-sonnet-20240620" />
+              <provider value="Anthropic" />
+              <tags>
+                <list>
+                  <option value="gateway" />
+                  <option value="accuracy" />
+                  <option value="recommended" />
+                  <option value="free" />
+                </list>
+              </tags>
+              <title value="Claude 3.5 Sonnet" />
+              <usage>
+                <list>
+                  <option value="chat" />
+                  <option value="edit" />
+                </list>
+              </usage>
             </llm>
           </defaultLlm>
         </AccountData>
