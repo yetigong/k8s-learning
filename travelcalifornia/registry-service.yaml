@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: local-registry
+  namespace: default
+spec:
+  ports:
+    - port: 5000               # Port used by the registry inside the container
+      targetPort: 5000          # The internal port of the registry container
+      nodePort: 32000           # Exposing a specific NodePort (you can choose a different port if necessary)
+  selector:
+    app: registry
+  type: NodePort
