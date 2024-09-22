@@ -1,0 +1,12 @@
+appName: explorecalifornia.com
+imageName: localhost:5000/explorecalifornia.com:latest
+serviceName: explorecalifornia-service
+servicePort: 8082
+servicePath: /index
+namespace: development
+quoteServiceName: demo-service
+quoteServicePort: 8081
+quoteServicePath: /quote
+podInfoService: pod-info-service
+podInfoServicePort: 8083
+podInfoServicePath: /podinfo

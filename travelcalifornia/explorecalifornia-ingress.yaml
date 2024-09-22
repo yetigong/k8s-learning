@@ -1,0 +1,42 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: explorecalifornia-ingress
+  namespace: development
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: explorecalifornia.com
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: explorecalifornia-service  # This is the name of the service you want to route to.
+              port:
+                number: 8082
+        - path: /index
+          pathType: Prefix
+          backend:
+            service:
+              name: explorecalifornia-service
+              port:
+                number: 8082
+        - path: /quote
+          pathType: Prefix
+          backend:
+            service:
+              name: demo-service
+              port:
+                number: 8081
+        - path: /podinfo
+          pathType: Prefix
+          backend:
+            service:
+              name: pod-info-service
+              port:
+                number: 8083
+status:
+  loadBalancer: {}

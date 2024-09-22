@@ -1,0 +1,9 @@
+apiVersion: v2
+name: explorecalifornia
+version: 1.0.0
+appVersion: 1.0.0
+deprecated: false
+description: A Helm chart for deploying the Explore California website.
+maintainers:
+  - name: Your Name
+    email: panbotoy1@gmail.com

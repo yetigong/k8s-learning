@@ -21,6 +21,6 @@ spec:
  selector:
   app: pod-info
  ports:
-  - port: 81
+  - port: 8083
     targetPort: 3000
  type: LoadBalancer  # or NodePort if you prefer
